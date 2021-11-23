@@ -1,0 +1,7 @@
+
+crank --config ~/proxy.benchmarks.yml  --scenario proxy-yarp --profile local --load.variables.duration 5 --variable path=\/?s=1024 --variable serverScheme=https --variable downstreamScheme=https
+
+docker run -p 8080:8080  -it  --network host  -e DOWNSTREAM_SCHEME=https test-traefik
+
+docker build -f traefik.dockerfile  -t test-traefik  --build-arg SERVER_SCHEME=https --build-arg DOWNSTREAM_SCHEME=https .
+
