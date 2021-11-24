@@ -244,6 +244,24 @@ profiles:
         endpoints: 
           - http://asp-citrine-db:5001
 
+  lil-bench-traefik:
+    variables:
+      serverAddress: 20.150.137.169
+      serverPort: 8080
+      downstreamAddress: 20.106.72.217
+      downstreamPort: 8081
+      cores: 8
+    jobs: 
+      downstream:
+        endpoints: 
+          - http://20.106.72.217:5010
+      application:
+        endpoints: 
+          - http://20.150.137.169:5010
+      load:
+        endpoints: 
+          - http://20.106.72.197:5010
+
   local:
     variables:
       serverAddress: localhost
