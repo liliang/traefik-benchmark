@@ -12,3 +12,11 @@ sudo apt-get install -y dotnet-sdk-3.1
 
 dotnet tool install -g Microsoft.Crank.Controller --version "0.2.0-*" 
 dotnet tool install -g Microsoft.Crank.Agent --version "0.2.0-*" 
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+rm get-docker.sh
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
