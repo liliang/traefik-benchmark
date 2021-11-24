@@ -22,6 +22,17 @@ crank --config https://raw.githubusercontent.com/liliang/traefik-benchmark/maste
   --variable downstreamScheme=https
 
 
+crank --config https://raw.githubusercontent.com/liliang/traefik-benchmark/master/proxy.benchmarks.yml \
+  --scenario proxy-nginx \
+  --profile lil-bench-traefik \
+  --load.variables.duration 5 \
+  --load.variables.connections 8 \
+  --load.variables.verb POST \
+  --load.variables.bodyFile https://raw.githubusercontent.com/liliang/traefik-benchmark/master/512B.txt \
+  --variable path=\/?s=512 \
+  --variable serverScheme=https \
+  --variable downstreamScheme=https
+
 docker run -p 8080:8080  -it  --network host  -e DOWNSTREAM_SCHEME=https test-traefik
 
 docker build -f traefik.dockerfile  -t test-traefik  --build-arg SERVER_SCHEME=https --build-arg DOWNSTREAM_SCHEME=https .
