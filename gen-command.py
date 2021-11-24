@@ -1,7 +1,7 @@
 
 proxies = ['nginx', 'traefik', 'yarp']
 
-connections = [1, 2, 4, 8, 16]
+connections = [1, 2, 4, 8]
 
 template = '''
 crank --config ./proxy.benchmarks.yml \
