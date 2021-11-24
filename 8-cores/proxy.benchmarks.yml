@@ -1,0 +1,281 @@
+﻿# The scenarios in this file accept the following arguments:
+  # --variable serverScheme= [http, https]
+  # --variable downstreamScheme= [http, https]
+  # --variable serverProtocol= [http, http2]
+  # --variable downstreamProtocol= [http, http2]
+
+imports:
+  - https://raw.githubusercontent.com/dotnet/crank/main/src/Microsoft.Crank.Jobs.Wrk/wrk.yml
+  - https://raw.githubusercontent.com/dotnet/crank/main/src/Microsoft.Crank.Jobs.Wrk2/wrk2.yml
+  - https://raw.githubusercontent.com/dotnet/crank/main/src/Microsoft.Crank.Jobs.Bombardier/bombardier.yml
+
+variables:
+    path: /
+    serverScheme: http # http, https
+    downstreamScheme: http # http, https
+    serverProtocol: http # http, http2
+    downstreamProtocol: http # http, http2
+
+jobs:
+  # override bombardier transport argument based on the serverProtocol variable
+  bombardier:
+    variables:
+      transport: '{% if serverProtocol == "http2" %}http2{% else %}fasthttp{% endif %}'
+
+  httpclientproxy:
+    source:
+      repository: https://github.com/aspnet/benchmarks.git
+      branchOrCommit: main
+      project: src/BenchmarksApps/HttpClient/Proxy/Proxy.csproj
+    readyStateText: Application started.
+    arguments: '--urls {{serverScheme}}://*:8080 --baseUri {{downstreamScheme}}://{{downstreamAddress}}:{{downstreamPort}}'
+
+  nginxproxy:
+    source:
+      Repository: https://github.com/aspnet/benchmarks.git
+      BranchOrCommit: main
+      DockerFile: docker/nginx/nginx.dockerfile
+      DockerImageName: nginx-reverseproxy
+      DockerContextDirectory: docker/nginx
+    environmentVariables:
+      DOWNSTREAM_SCHEME: '{{downstreamScheme}}'
+      DOWNSTREAM_ADDRESS: '{{downstreamAddress}}'
+      DOWNSTREAM_PORT: '{{downstreamPort}}'
+      WORKER_PROCESSES: '{{cores}}'
+    buildArguments: 
+      - SERVER_SCHEME={{serverScheme}}
+      - SERVER_PROTOCOL={{serverProtocol}}
+    port: 8080
+
+  envoyproxy:
+    source:
+      Repository: https://github.com/aspnet/benchmarks.git
+      BranchOrCommit: main
+      DockerFile: docker/envoy/envoy.dockerfile
+      DockerImageName: envoy-reverseproxy
+      DockerContextDirectory: docker/envoy
+    readyStateText: starting workers
+    environmentVariables:
+      DOWNSTREAM_ADDRESS: '{{downstreamAddress}}'
+      DOWNSTREAM_PORT: '{{downstreamPort}}'
+    buildArguments: 
+      - SERVER_SCHEME={{serverScheme}}
+      - SERVER_PROTOCOL={{serverProtocol}}
+      - DOWNSTREAM_SCHEME={{downstreamScheme}}
+      - DOWNSTREAM_PROTOCOL={{downstreamProtocol}}
+    port: 8080
+
+  traefikproxy:
+    source:
+      Repository: https://github.com/liliang/Benchmarks.git
+      BranchOrCommit: main
+      DockerFile: docker/traefik/traefik.dockerfile
+      DockerImageName: traefik-reverseproxy
+      DockerContextDirectory: docker/traefik
+    environmentVariables:
+      DOWNSTREAM_SCHEME: '{{downstreamScheme}}'
+      DOWNSTREAM_ADDRESS: '{{downstreamAddress}}'
+      DOWNSTREAM_PORT: '{{downstreamPort}}'
+    buildArguments: 
+      - SERVER_SCHEME={{serverScheme}}
+    port: 8080
+
+  haproxyproxy:
+    source:
+      Repository: https://github.com/aspnet/benchmarks.git
+      BranchOrCommit: main
+      DockerFile: docker/haproxy/haproxy.dockerfile
+      DockerImageName: haproxy-reverseproxy
+      DockerContextDirectory: docker/haproxy
+    environmentVariables:
+      DOWNSTREAM_ADDRESS: '{{downstreamAddress}}'
+      DOWNSTREAM_PORT: '{{downstreamPort}}'
+    port: 8080
+
+  downstream:
+    source:
+      repository: https://github.com/aspnet/benchmarks.git
+      branchOrCommit: main
+      project: src/Downstream/Downstream.csproj
+    readyStateText: Application started.
+    variables:
+      downstreamPort: 8081
+    arguments: '--urls {{downstreamScheme}}://*:{{downstreamPort}} --Kestrel:EndpointDefaults:Protocols {% if downstreamProtocol == "http2" %}http2{% else %}http1{% endif %}'
+
+  yarp:
+    source:
+      repository: https://github.com/liliang/traefik-benchmark.git
+      branchOrCommit: master
+      project: BenchmarkApp/BenchmarkApp.csproj
+    readyStateText: Application started.
+    arguments: '--urls {{serverScheme}}://*:8080 --clusterUrls {{downstreamScheme}}://{{downstreamAddress}}:{{downstreamPort}}'
+
+scenarios:
+  proxy-httpclient:
+    downstream:
+      job: downstream
+    application: # custom name for a service to deploy
+      job: httpclientproxy
+    load:
+      job: bombardier
+      variables:
+        serverPort: 8080
+
+  proxy-nginx:
+    downstream:
+      job: downstream
+    application:
+      job: nginxproxy
+    load:
+      job: bombardier
+      variables:
+        serverPort: 8080
+
+  proxy-haproxy:
+    downstream:
+      job: downstream
+    application:
+      job: haproxyproxy
+    load:
+      job: bombardier
+      variables:
+        serverPort: 8080
+
+  proxy-envoy:
+    downstream:
+      job: downstream
+    application:
+      job: envoyproxy
+    load:
+      job: bombardier
+      variables:
+        serverPort: 8080
+
+  proxy-traefik:
+    downstream:
+      job: downstream
+    application:
+      job: traefikproxy
+    load:
+      job: bombardier
+      variables:
+        serverPort: 8080
+
+  proxy-yarp:
+    downstream:
+      job: downstream
+    application:
+      job: yarp
+    load:
+      job: bombardier
+      variables:
+        serverPort: 8080
+
+profiles:
+
+  aspnet-perf-lin:
+    variables:
+      serverAddress: 10.0.0.102
+      downstreamAddress: 10.0.0.103
+      downstreamPort: 8081
+      cores: 12
+    jobs:
+      downstream:
+        endpoints: 
+          - http://asp-perf-db:5001
+      application:
+        endpoints: 
+          - http://asp-perf-lin:5001
+      load:
+        endpoints: 
+          - http://asp-perf-load:5001
+        options:
+          displayOutput: true
+
+  aspnet-perf-win:
+    variables:
+      serverAddress: 10.0.0.110
+      downstreamAddress: 10.0.0.104
+      downstreamPort: 8081
+      cores: 12
+    jobs:
+      downstream:
+        endpoints: 
+          - http://asp-perf-load:5001
+      application:
+        endpoints: 
+          - http://asp-perf-win:5001
+      load:
+        endpoints: 
+          - http://asp-perf-db:5001
+        options:
+
+  aspnet-citrine-lin:
+    variables:
+      serverAddress: 10.0.0.102
+      downstreamAddress: 10.0.0.103
+      downstreamPort: 8081
+      cores: 28
+    jobs: 
+      downstream:
+        endpoints: 
+          - http://asp-citrine-db:5001
+      application:
+        endpoints: 
+          - http://asp-citrine-lin:5001
+      load:
+        endpoints: 
+          - http://asp-citrine-load:5001
+
+  aspnet-citrine-win:
+    variables:
+      serverAddress: 10.0.0.104
+      downstreamAddress: 10.0.0.105
+      downstreamPort: 8081
+      cores: 28
+    jobs: 
+      downstream:
+        endpoints: 
+          - http://asp-citrine-load:5001
+      application:
+        endpoints: 
+          - http://asp-citrine-win:5001
+      load:
+        endpoints: 
+          - http://asp-citrine-db:5001
+
+  lil-bench-traefik:
+    variables:
+      serverAddress: 10.2.0.5
+      serverPort: 8080
+      downstreamAddress: 10.2.0.4
+      downstreamPort: 8081
+      cores: 4
+    jobs: 
+      downstream:
+        endpoints: 
+          - http://10.2.0.4:5010
+      application:
+        endpoints: 
+          - http://10.2.0.5:5010
+      load:
+        endpoints: 
+          - http://10.2.0.6:5010
+
+  local:
+    variables:
+      serverAddress: localhost
+      serverPort: 8080
+      downstreamAddress: localhost
+      downstreamPort: 8081
+      cores: 8
+    jobs: 
+      downstream:
+        endpoints: 
+          - http://localhost:5010
+      application:
+        endpoints: 
+          - http://localhost:5010
+      load:
+        endpoints: 
+          - http://localhost:5010
