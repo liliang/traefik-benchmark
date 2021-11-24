@@ -1,0 +1,784 @@
+[05:15:54.637] Running session '905e3a813aa94ad6933fdd677e5cffe6' with description ''
+[05:15:54.691] Starting job 'downstream' ...
+[05:15:54.696] Submitted job: http://10.2.0.4:5010/jobs/5
+[05:15:55.730] 'downstream' has been selected by the server ...
+[05:15:55.732] 'downstream' is now building ... http://10.2.0.4:5010/jobs/5/buildlog
+[05:16:01.760] 'downstream' is running ... http://10.2.0.4:5010/jobs/5/output
+[05:16:01.765] Starting job 'application' ...
+[05:16:01.767] Submitted job: http://10.2.0.5:5010/jobs/5
+[05:16:02.772] 'application' has been selected by the server ...
+[05:16:02.773] 'application' is now building ... http://10.2.0.5:5010/jobs/5/buildlog
+[05:16:09.732] 'application' is running ... http://10.2.0.5:5010/jobs/5/output
+[05:16:09.736] Starting job 'load' ...
+[05:16:09.738] Submitted job: http://10.2.0.6:5010/jobs/5
+[05:16:10.741] 'load' has been selected by the server ...
+[05:16:10.742] 'load' is now building ... http://10.2.0.6:5010/jobs/5/buildlog
+[05:16:11.746] 'load' is running ... http://10.2.0.6:5010/jobs/5/output
+[05:17:27.776] Stopping job 'load' ...
+[05:17:28.794] Deleting job 'load' ...
+[05:17:28.796] Stopping job 'application' ...
+[05:17:40.817] Deleting job 'application' ...
+[05:17:40.818] Stopping job 'downstream' ...
+[05:17:41.822] Deleting job 'downstream' ...
+
+| downstream            |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 49             |
+| Cores usage (%)       | 197            |
+| Working Set (MB)      | 176            |
+| Private Memory (MB)   | 285            |
+| Build Time (ms)       | 3,759          |
+| Start Time (ms)       | 266            |
+| Published Size (KB)   | 95,101         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| application         |         |
+| ------------------- | ------- |
+| CPU Usage (%)       | 6       |
+| Cores usage (%)     | 25      |
+| Working Set (MB)    | 7       |
+| Build Time (ms)     | 3,153   |
+| Start Time (ms)     | 249     |
+| Published Size (KB) | 138,158 |
+
+
+| load                |         |
+| ------------------- | ------- |
+| CPU Usage (%)       | 6       |
+| Cores usage (%)     | 24      |
+| Working Set (MB)    | 52      |
+| Private Memory (MB) | 107     |
+| Start Time (ms)     | 91      |
+| First Request (ms)  | 322     |
+| Requests            | 193,831 |
+| Bad responses       | 0       |
+| Mean latency (us)   | 308     |
+| Max latency (us)    | 13,825  |
+| Requests/sec        | 3,231   |
+| Requests/sec (max)  | 3,906   |
+
+
+Results saved in '/home/azureuser/traefik-benchmark/nginx_connections-1.json'
+[05:17:43.127] Running session '1e2711b6b42041e59ccb6035629fc2ff' with description ''
+[05:17:43.182] Starting job 'downstream' ...
+[05:17:43.187] Submitted job: http://10.2.0.4:5010/jobs/6
+[05:17:44.225] 'downstream' has been selected by the server ...
+[05:17:44.227] 'downstream' is now building ... http://10.2.0.4:5010/jobs/6/buildlog
+[05:17:51.240] 'downstream' is running ... http://10.2.0.4:5010/jobs/6/output
+[05:17:51.244] Starting job 'application' ...
+[05:17:51.246] Submitted job: http://10.2.0.5:5010/jobs/6
+[05:17:52.251] 'application' has been selected by the server ...
+[05:17:52.251] 'application' is now building ... http://10.2.0.5:5010/jobs/6/buildlog
+[05:17:58.257] 'application' is running ... http://10.2.0.5:5010/jobs/6/output
+[05:17:58.261] Starting job 'load' ...
+[05:17:58.262] Submitted job: http://10.2.0.6:5010/jobs/6
+[05:17:59.264] 'load' has been selected by the server ...
+[05:17:59.264] 'load' is now building ... http://10.2.0.6:5010/jobs/6/buildlog
+[05:18:00.265] 'load' is running ... http://10.2.0.6:5010/jobs/6/output
+[05:19:16.294] Stopping job 'load' ...
+[05:19:17.310] Deleting job 'load' ...
+[05:19:17.312] Stopping job 'application' ...
+[05:19:29.329] Deleting job 'application' ...
+[05:19:29.330] Stopping job 'downstream' ...
+[05:19:30.337] Deleting job 'downstream' ...
+
+| downstream            |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 41             |
+| Cores usage (%)       | 162            |
+| Working Set (MB)      | 175            |
+| Private Memory (MB)   | 292            |
+| Build Time (ms)       | 3,885          |
+| Start Time (ms)       | 269            |
+| Published Size (KB)   | 95,101         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| application         |        |
+| ------------------- | ------ |
+| CPU Usage (%)       | 27     |
+| Cores usage (%)     | 109    |
+| Working Set (MB)    | 29     |
+| Build Time (ms)     | 2,752  |
+| Start Time (ms)     | 246    |
+| Published Size (KB) | 97,961 |
+
+
+| load                |         |
+| ------------------- | ------- |
+| CPU Usage (%)       | 5       |
+| Cores usage (%)     | 20      |
+| Working Set (MB)    | 50      |
+| Private Memory (MB) | 107     |
+| Start Time (ms)     | 103     |
+| First Request (ms)  | 315     |
+| Requests            | 133,000 |
+| Bad responses       | 0       |
+| Mean latency (us)   | 449     |
+| Max latency (us)    | 13,356  |
+| Requests/sec        | 2,217   |
+| Requests/sec (max)  | 2,508   |
+
+
+Results saved in '/home/azureuser/traefik-benchmark/traefik_connections-1.json'
+[05:19:32.159] Running session 'e6e838a878164c0d9d7734de8d642c55' with description ''
+[05:19:32.213] Starting job 'downstream' ...
+[05:19:32.218] Submitted job: http://10.2.0.4:5010/jobs/7
+[05:19:33.243] 'downstream' has been selected by the server ...
+[05:19:33.245] 'downstream' is now building ... http://10.2.0.4:5010/jobs/7/buildlog
+[05:19:40.257] 'downstream' is running ... http://10.2.0.4:5010/jobs/7/output
+[05:19:40.261] Starting job 'application' ...
+[05:19:40.262] Submitted job: http://10.2.0.5:5010/jobs/7
+[05:19:41.262] 'application' has been selected by the server ...
+[05:19:41.263] 'application' is now building ... http://10.2.0.5:5010/jobs/7/buildlog
+[05:19:47.268] 'application' is running ... http://10.2.0.5:5010/jobs/7/output
+[05:19:47.271] Starting job 'load' ...
+[05:19:47.272] Submitted job: http://10.2.0.6:5010/jobs/7
+[05:19:48.276] 'load' has been selected by the server ...
+[05:19:48.277] 'load' is now building ... http://10.2.0.6:5010/jobs/7/buildlog
+[05:19:49.278] 'load' is running ... http://10.2.0.6:5010/jobs/7/output
+[05:21:06.312] Stopping job 'load' ...
+[05:21:07.330] Deleting job 'load' ...
+[05:21:07.332] Stopping job 'application' ...
+[05:21:08.343] Deleting job 'application' ...
+[05:21:08.344] Stopping job 'downstream' ...
+[05:21:09.353] Deleting job 'downstream' ...
+
+| downstream            |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 30             |
+| Cores usage (%)       | 118            |
+| Working Set (MB)      | 175            |
+| Private Memory (MB)   | 283            |
+| Build Time (ms)       | 3,803          |
+| Start Time (ms)       | 267            |
+| Published Size (KB)   | 95,101         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| application           |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 48             |
+| Cores usage (%)       | 193            |
+| Working Set (MB)      | 191            |
+| Private Memory (MB)   | 293            |
+| Build Time (ms)       | 3,655          |
+| Start Time (ms)       | 372            |
+| Published Size (KB)   | 95,410         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| load                |         |
+| ------------------- | ------- |
+| CPU Usage (%)       | 4       |
+| Cores usage (%)     | 16      |
+| Working Set (MB)    | 50      |
+| Private Memory (MB) | 107     |
+| Start Time (ms)     | 97      |
+| First Request (ms)  | 478     |
+| Requests            | 108,538 |
+| Bad responses       | 0       |
+| Mean latency (us)   | 551     |
+| Max latency (us)    | 12,103  |
+| Requests/sec        | 1,809   |
+| Requests/sec (max)  | 2,108   |
+
+
+Results saved in '/home/azureuser/traefik-benchmark/yarp_connections-1.json'
+[05:21:10.620] Running session '6bbd5e7b696446498ca18fe13205f9ed' with description ''
+[05:21:10.679] Starting job 'downstream' ...
+[05:21:10.684] Submitted job: http://10.2.0.4:5010/jobs/8
+[05:21:11.717] 'downstream' has been selected by the server ...
+[05:21:11.719] 'downstream' is now building ... http://10.2.0.4:5010/jobs/8/buildlog
+[05:21:18.729] 'downstream' is running ... http://10.2.0.4:5010/jobs/8/output
+[05:21:18.734] Starting job 'application' ...
+[05:21:18.735] Submitted job: http://10.2.0.5:5010/jobs/8
+[05:21:19.742] 'application' has been selected by the server ...
+[05:21:19.743] 'application' is now building ... http://10.2.0.5:5010/jobs/8/buildlog
+[05:21:24.746] 'application' is running ... http://10.2.0.5:5010/jobs/8/output
+[05:21:24.750] Starting job 'load' ...
+[05:21:24.752] Submitted job: http://10.2.0.6:5010/jobs/8
+[05:21:25.758] 'load' has been selected by the server ...
+[05:21:25.759] 'load' is now building ... http://10.2.0.6:5010/jobs/8/buildlog
+[05:21:26.761] 'load' is running ... http://10.2.0.6:5010/jobs/8/output
+[05:22:42.801] Stopping job 'load' ...
+[05:22:43.816] Deleting job 'load' ...
+[05:22:43.818] Stopping job 'application' ...
+[05:22:55.826] Deleting job 'application' ...
+[05:22:55.827] Stopping job 'downstream' ...
+[05:22:56.834] Deleting job 'downstream' ...
+
+| downstream            |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 70             |
+| Cores usage (%)       | 278            |
+| Working Set (MB)      | 178            |
+| Private Memory (MB)   | 302            |
+| Build Time (ms)       | 3,871          |
+| Start Time (ms)       | 264            |
+| Published Size (KB)   | 95,101         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| application         |         |
+| ------------------- | ------- |
+| CPU Usage (%)       | 11      |
+| Cores usage (%)     | 46      |
+| Working Set (MB)    | 7       |
+| Build Time (ms)     | 2,189   |
+| Start Time (ms)     | 243     |
+| Published Size (KB) | 138,158 |
+
+
+| load                |         |
+| ------------------- | ------- |
+| CPU Usage (%)       | 10      |
+| Cores usage (%)     | 39      |
+| Working Set (MB)    | 50      |
+| Private Memory (MB) | 107     |
+| Start Time (ms)     | 90      |
+| First Request (ms)  | 316     |
+| Requests            | 350,037 |
+| Bad responses       | 0       |
+| Mean latency (us)   | 341     |
+| Max latency (us)    | 17,309  |
+| Requests/sec        | 5,834   |
+| Requests/sec (max)  | 7,290   |
+
+
+Results saved in '/home/azureuser/traefik-benchmark/nginx_connections-2.json'
+[05:22:58.100] Running session '4431730b54bd4f36a388755ab9c9c9e3' with description ''
+[05:22:58.153] Starting job 'downstream' ...
+[05:22:58.158] Submitted job: http://10.2.0.4:5010/jobs/9
+[05:22:59.190] 'downstream' has been selected by the server ...
+[05:22:59.192] 'downstream' is now building ... http://10.2.0.4:5010/jobs/9/buildlog
+[05:23:06.202] 'downstream' is running ... http://10.2.0.4:5010/jobs/9/output
+[05:23:06.206] Starting job 'application' ...
+[05:23:06.208] Submitted job: http://10.2.0.5:5010/jobs/9
+[05:23:07.213] 'application' has been selected by the server ...
+[05:23:07.214] 'application' is now building ... http://10.2.0.5:5010/jobs/9/buildlog
+[05:23:13.223] 'application' is running ... http://10.2.0.5:5010/jobs/9/output
+[05:23:13.227] Starting job 'load' ...
+[05:23:13.229] Submitted job: http://10.2.0.6:5010/jobs/9
+[05:23:14.232] 'load' has been selected by the server ...
+[05:23:14.233] 'load' is now building ... http://10.2.0.6:5010/jobs/9/buildlog
+[05:23:15.236] 'load' is running ... http://10.2.0.6:5010/jobs/9/output
+[05:24:31.246] Stopping job 'load' ...
+[05:24:32.261] Deleting job 'load' ...
+[05:24:32.263] Stopping job 'application' ...
+[05:24:44.276] Deleting job 'application' ...
+[05:24:44.277] Stopping job 'downstream' ...
+[05:24:45.285] Deleting job 'downstream' ...
+
+| downstream            |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 94             |
+| Cores usage (%)       | 375            |
+| Working Set (MB)      | 179            |
+| Private Memory (MB)   | 320            |
+| Build Time (ms)       | 3,740          |
+| Start Time (ms)       | 258            |
+| Published Size (KB)   | 95,101         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| application         |        |
+| ------------------- | ------ |
+| CPU Usage (%)       | 46     |
+| Cores usage (%)     | 184    |
+| Working Set (MB)    | 29     |
+| Build Time (ms)     | 2,596  |
+| Start Time (ms)     | 239    |
+| Published Size (KB) | 97,961 |
+
+
+| load                |         |
+| ------------------- | ------- |
+| CPU Usage (%)       | 9       |
+| Cores usage (%)     | 36      |
+| Working Set (MB)    | 50      |
+| Private Memory (MB) | 107     |
+| Start Time (ms)     | 98      |
+| First Request (ms)  | 314     |
+| Requests            | 164,666 |
+| Bad responses       | 0       |
+| Mean latency (us)   | 727     |
+| Max latency (us)    | 29,416  |
+| Requests/sec        | 2,745   |
+| Requests/sec (max)  | 4,451   |
+
+
+Results saved in '/home/azureuser/traefik-benchmark/traefik_connections-2.json'
+[05:24:47.126] Running session '8c1fc5ea121e4f4ca1911b2ac184fe0e' with description ''
+[05:24:47.180] Starting job 'downstream' ...
+[05:24:47.197] Submitted job: http://10.2.0.4:5010/jobs/10
+[05:24:48.218] 'downstream' has been selected by the server ...
+[05:24:48.219] 'downstream' is now building ... http://10.2.0.4:5010/jobs/10/buildlog
+[05:24:56.228] 'downstream' is running ... http://10.2.0.4:5010/jobs/10/output
+[05:24:56.232] Starting job 'application' ...
+[05:24:56.233] Submitted job: http://10.2.0.5:5010/jobs/10
+[05:24:57.236] 'application' has been selected by the server ...
+[05:24:57.237] 'application' is now building ... http://10.2.0.5:5010/jobs/10/buildlog
+[05:25:03.241] 'application' is running ... http://10.2.0.5:5010/jobs/10/output
+[05:25:03.245] Starting job 'load' ...
+[05:25:03.246] Submitted job: http://10.2.0.6:5010/jobs/10
+[05:25:04.248] 'load' has been selected by the server ...
+[05:25:04.249] 'load' is now building ... http://10.2.0.6:5010/jobs/10/buildlog
+[05:25:05.251] 'load' is running ... http://10.2.0.6:5010/jobs/10/output
+[05:26:22.265] Stopping job 'load' ...
+[05:26:23.280] Deleting job 'load' ...
+[05:26:23.282] Stopping job 'application' ...
+[05:26:24.289] Deleting job 'application' ...
+[05:26:24.290] Stopping job 'downstream' ...
+[05:26:25.297] Deleting job 'downstream' ...
+
+| downstream            |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 44             |
+| Cores usage (%)       | 176            |
+| Working Set (MB)      | 176            |
+| Private Memory (MB)   | 308            |
+| Build Time (ms)       | 3,803          |
+| Start Time (ms)       | 260            |
+| Published Size (KB)   | 95,101         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| application           |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 74             |
+| Cores usage (%)       | 297            |
+| Working Set (MB)      | 192            |
+| Private Memory (MB)   | 318            |
+| Build Time (ms)       | 3,758          |
+| Start Time (ms)       | 367            |
+| Published Size (KB)   | 95,410         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| load                |         |
+| ------------------- | ------- |
+| CPU Usage (%)       | 8       |
+| Cores usage (%)     | 30      |
+| Working Set (MB)    | 50      |
+| Private Memory (MB) | 107     |
+| Start Time (ms)     | 109     |
+| First Request (ms)  | 478     |
+| Requests            | 199,889 |
+| Bad responses       | 0       |
+| Mean latency (us)   | 598     |
+| Max latency (us)    | 16,934  |
+| Requests/sec        | 3,332   |
+| Requests/sec (max)  | 3,914   |
+
+
+Results saved in '/home/azureuser/traefik-benchmark/yarp_connections-2.json'
+[05:26:26.559] Running session 'b5020e17a9834c90b6cf3841b800dc20' with description ''
+[05:26:26.613] Starting job 'downstream' ...
+[05:26:26.618] Submitted job: http://10.2.0.4:5010/jobs/11
+[05:26:27.651] 'downstream' has been selected by the server ...
+[05:26:27.653] 'downstream' is now building ... http://10.2.0.4:5010/jobs/11/buildlog
+[05:26:34.664] 'downstream' is running ... http://10.2.0.4:5010/jobs/11/output
+[05:26:34.668] Starting job 'application' ...
+[05:26:34.670] Submitted job: http://10.2.0.5:5010/jobs/11
+[05:26:35.672] 'application' has been selected by the server ...
+[05:26:35.673] 'application' is now building ... http://10.2.0.5:5010/jobs/11/buildlog
+[05:26:41.676] 'application' is running ... http://10.2.0.5:5010/jobs/11/output
+[05:26:41.680] Starting job 'load' ...
+[05:26:41.682] Submitted job: http://10.2.0.6:5010/jobs/11
+[05:26:42.683] 'load' has been selected by the server ...
+[05:26:42.684] 'load' is now building ... http://10.2.0.6:5010/jobs/11/buildlog
+[05:26:43.686] 'load' is running ... http://10.2.0.6:5010/jobs/11/output
+[05:27:59.706] Stopping job 'load' ...
+[05:28:00.720] Deleting job 'load' ...
+[05:28:00.722] Stopping job 'application' ...
+[05:28:12.733] Deleting job 'application' ...
+[05:28:12.734] Stopping job 'downstream' ...
+[05:28:13.741] Deleting job 'downstream' ...
+
+| downstream            |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 90             |
+| Cores usage (%)       | 360            |
+| Working Set (MB)      | 181            |
+| Private Memory (MB)   | 320            |
+| Build Time (ms)       | 3,702          |
+| Start Time (ms)       | 252            |
+| Published Size (KB)   | 95,101         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| application         |         |
+| ------------------- | ------- |
+| CPU Usage (%)       | 22      |
+| Cores usage (%)     | 87      |
+| Working Set (MB)    | 8       |
+| Build Time (ms)     | 2,715   |
+| Start Time (ms)     | 229     |
+| Published Size (KB) | 138,158 |
+
+
+| load                |         |
+| ------------------- | ------- |
+| CPU Usage (%)       | 17      |
+| Cores usage (%)     | 67      |
+| Working Set (MB)    | 50      |
+| Private Memory (MB) | 107     |
+| Start Time (ms)     | 95      |
+| First Request (ms)  | 312     |
+| Requests            | 651,709 |
+| Bad responses       | 0       |
+| Mean latency (us)   | 366     |
+| Max latency (us)    | 56,501  |
+| Requests/sec        | 10,862  |
+| Requests/sec (max)  | 14,100  |
+
+
+Results saved in '/home/azureuser/traefik-benchmark/nginx_connections-4.json'
+[05:28:15.010] Running session 'fd4b8820253c4478805eeebcd346b865' with description ''
+[05:28:15.065] Starting job 'downstream' ...
+[05:28:15.070] Submitted job: http://10.2.0.4:5010/jobs/12
+[05:28:16.107] 'downstream' has been selected by the server ...
+[05:28:16.109] 'downstream' is now building ... http://10.2.0.4:5010/jobs/12/buildlog
+[05:28:23.118] 'downstream' is running ... http://10.2.0.4:5010/jobs/12/output
+[05:28:23.123] Starting job 'application' ...
+[05:28:23.124] Submitted job: http://10.2.0.5:5010/jobs/12
+[05:28:24.130] 'application' has been selected by the server ...
+[05:28:24.130] 'application' is now building ... http://10.2.0.5:5010/jobs/12/buildlog
+[05:28:30.134] 'application' is running ... http://10.2.0.5:5010/jobs/12/output
+[05:28:30.138] Starting job 'load' ...
+[05:28:30.139] Submitted job: http://10.2.0.6:5010/jobs/12
+[05:28:31.143] 'load' has been selected by the server ...
+[05:28:31.143] 'load' is now building ... http://10.2.0.6:5010/jobs/12/buildlog
+[05:28:32.146] 'load' is running ... http://10.2.0.6:5010/jobs/12/output
+[05:29:48.184] Stopping job 'load' ...
+[05:29:49.203] Deleting job 'load' ...
+[05:29:49.205] Stopping job 'application' ...
+[05:30:00.209] Deleting job 'application' ...
+[05:30:00.210] Stopping job 'downstream' ...
+[05:30:02.216] Deleting job 'downstream' ...
+
+| downstream            |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 99             |
+| Cores usage (%)       | 397            |
+| Working Set (MB)      | 181            |
+| Private Memory (MB)   | 315            |
+| Build Time (ms)       | 3,738          |
+| Start Time (ms)       | 263            |
+| Published Size (KB)   | 95,101         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| application         |        |
+| ------------------- | ------ |
+| CPU Usage (%)       | 54     |
+| Cores usage (%)     | 217    |
+| Working Set (MB)    | 31     |
+| Build Time (ms)     | 2,866  |
+| Start Time (ms)     | 244    |
+| Published Size (KB) | 97,961 |
+
+
+| load                |        |
+| ------------------- | ------ |
+| CPU Usage (%)       | 13     |
+| Cores usage (%)     | 53     |
+| Working Set (MB)    | 52     |
+| Private Memory (MB) | 107    |
+| Start Time (ms)     | 97     |
+| First Request (ms)  | 315    |
+| Requests            | 90,230 |
+| Bad responses       | 0      |
+| Mean latency (us)   | 2,658  |
+| Max latency (us)    | 70,445 |
+| Requests/sec        | 1,504  |
+| Requests/sec (max)  | 8,370  |
+
+
+Results saved in '/home/azureuser/traefik-benchmark/traefik_connections-4.json'
+[05:30:03.987] Running session '7d09fb85aeb8468eae7d1d1028f74a12' with description ''
+[05:30:04.041] Starting job 'downstream' ...
+[05:30:04.045] Submitted job: http://10.2.0.4:5010/jobs/13
+[05:30:05.064] 'downstream' has been selected by the server ...
+[05:30:05.066] 'downstream' is now building ... http://10.2.0.4:5010/jobs/13/buildlog
+[05:30:12.078] 'downstream' is running ... http://10.2.0.4:5010/jobs/13/output
+[05:30:12.083] Starting job 'application' ...
+[05:30:12.084] Submitted job: http://10.2.0.5:5010/jobs/13
+[05:30:13.088] 'application' has been selected by the server ...
+[05:30:13.088] 'application' is now building ... http://10.2.0.5:5010/jobs/13/buildlog
+[05:30:19.094] 'application' is running ... http://10.2.0.5:5010/jobs/13/output
+[05:30:19.097] Starting job 'load' ...
+[05:30:19.099] Submitted job: http://10.2.0.6:5010/jobs/13
+[05:30:20.098] 'load' has been selected by the server ...
+[05:30:20.099] 'load' is now building ... http://10.2.0.6:5010/jobs/13/buildlog
+[05:30:22.102] 'load' is running ... http://10.2.0.6:5010/jobs/13/output
+[05:31:37.126] Stopping job 'load' ...
+[05:31:38.141] Deleting job 'load' ...
+[05:31:38.145] Stopping job 'application' ...
+[05:31:40.155] Deleting job 'application' ...
+[05:31:40.155] Stopping job 'downstream' ...
+[05:31:42.162] Deleting job 'downstream' ...
+
+| downstream            |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 61             |
+| Cores usage (%)       | 243            |
+| Working Set (MB)      | 173            |
+| Private Memory (MB)   | 308            |
+| Build Time (ms)       | 3,679          |
+| Start Time (ms)       | 253            |
+| Published Size (KB)   | 95,101         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| application           |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 98             |
+| Cores usage (%)       | 391            |
+| Working Set (MB)      | 208            |
+| Private Memory (MB)   | 527            |
+| Build Time (ms)       | 3,635          |
+| Start Time (ms)       | 387            |
+| Published Size (KB)   | 95,410         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| load                |         |
+| ------------------- | ------- |
+| CPU Usage (%)       | 13      |
+| Cores usage (%)     | 53      |
+| Working Set (MB)    | 50      |
+| Private Memory (MB) | 107     |
+| Start Time (ms)     | 93      |
+| First Request (ms)  | 480     |
+| Requests            | 355,759 |
+| Bad responses       | 0       |
+| Mean latency (us)   | 672     |
+| Max latency (us)    | 21,672  |
+| Requests/sec        | 5,929   |
+| Requests/sec (max)  | 7,602   |
+
+
+Results saved in '/home/azureuser/traefik-benchmark/yarp_connections-4.json'
+[05:31:43.443] Running session '5b0fc15cc98643c580d5d4a327b26c27' with description ''
+[05:31:43.498] Starting job 'downstream' ...
+[05:31:43.503] Submitted job: http://10.2.0.4:5010/jobs/14
+[05:31:44.542] 'downstream' has been selected by the server ...
+[05:31:44.544] 'downstream' is now building ... http://10.2.0.4:5010/jobs/14/buildlog
+[05:31:51.555] 'downstream' is running ... http://10.2.0.4:5010/jobs/14/output
+[05:31:51.559] Starting job 'application' ...
+[05:31:51.561] Submitted job: http://10.2.0.5:5010/jobs/14
+[05:31:52.566] 'application' has been selected by the server ...
+[05:31:52.566] 'application' is now building ... http://10.2.0.5:5010/jobs/14/buildlog
+[05:31:57.571] 'application' is running ... http://10.2.0.5:5010/jobs/14/output
+[05:31:57.581] Starting job 'load' ...
+[05:31:57.582] Submitted job: http://10.2.0.6:5010/jobs/14
+[05:31:58.585] 'load' has been selected by the server ...
+[05:31:58.586] 'load' is now building ... http://10.2.0.6:5010/jobs/14/buildlog
+[05:31:59.585] 'load' is running ... http://10.2.0.6:5010/jobs/14/output
+[05:33:15.637] Stopping job 'load' ...
+[05:33:16.652] Deleting job 'load' ...
+[05:33:16.654] Stopping job 'application' ...
+[05:33:27.662] Deleting job 'application' ...
+[05:33:27.663] Stopping job 'downstream' ...
+[05:33:28.671] Deleting job 'downstream' ...
+
+| downstream            |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 96             |
+| Cores usage (%)       | 385            |
+| Working Set (MB)      | 182            |
+| Private Memory (MB)   | 322            |
+| Build Time (ms)       | 3,716          |
+| Start Time (ms)       | 251            |
+| Published Size (KB)   | 95,101         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| application         |         |
+| ------------------- | ------- |
+| CPU Usage (%)       | 55      |
+| Cores usage (%)     | 219     |
+| Working Set (MB)    | 8       |
+| Build Time (ms)     | 2,883   |
+| Start Time (ms)     | 243     |
+| Published Size (KB) | 138,158 |
+
+
+| load                |           |
+| ------------------- | --------- |
+| CPU Usage (%)       | 27        |
+| Cores usage (%)     | 109       |
+| Working Set (MB)    | 50        |
+| Private Memory (MB) | 107       |
+| Start Time (ms)     | 89        |
+| First Request (ms)  | 311       |
+| Requests            | 1,034,541 |
+| Bad responses       | 0         |
+| Mean latency (us)   | 462       |
+| Max latency (us)    | 78,321    |
+| Requests/sec        | 17,241    |
+| Requests/sec (max)  | 23,469    |
+
+
+Results saved in '/home/azureuser/traefik-benchmark/nginx_connections-8.json'
+[05:33:29.968] Running session '7b997eafef404db8899f9c272984b78d' with description ''
+[05:33:30.022] Starting job 'downstream' ...
+[05:33:30.027] Submitted job: http://10.2.0.4:5010/jobs/15
+[05:33:31.064] 'downstream' has been selected by the server ...
+[05:33:31.067] 'downstream' is now building ... http://10.2.0.4:5010/jobs/15/buildlog
+[05:33:38.086] 'downstream' is running ... http://10.2.0.4:5010/jobs/15/output
+[05:33:38.091] Starting job 'application' ...
+[05:33:38.092] Submitted job: http://10.2.0.5:5010/jobs/15
+[05:33:39.097] 'application' has been selected by the server ...
+[05:33:39.098] 'application' is now building ... http://10.2.0.5:5010/jobs/15/buildlog
+[05:33:44.102] 'application' is running ... http://10.2.0.5:5010/jobs/15/output
+[05:33:44.105] Starting job 'load' ...
+[05:33:44.107] Submitted job: http://10.2.0.6:5010/jobs/15
+[05:33:45.106] 'load' has been selected by the server ...
+[05:33:45.107] 'load' is now building ... http://10.2.0.6:5010/jobs/15/buildlog
+[05:33:47.110] 'load' is running ... http://10.2.0.6:5010/jobs/15/output
+[05:35:02.157] Stopping job 'load' ...
+[05:35:03.172] Deleting job 'load' ...
+[05:35:03.174] Stopping job 'application' ...
+[05:35:15.183] Deleting job 'application' ...
+[05:35:15.184] Stopping job 'downstream' ...
+[05:35:17.192] Deleting job 'downstream' ...
+
+| downstream            |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 99             |
+| Cores usage (%)       | 398            |
+| Working Set (MB)      | 188            |
+| Private Memory (MB)   | 395            |
+| Build Time (ms)       | 3,613          |
+| Start Time (ms)       | 260            |
+| Published Size (KB)   | 95,101         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| application         |        |
+| ------------------- | ------ |
+| CPU Usage (%)       | 39     |
+| Cores usage (%)     | 154    |
+| Working Set (MB)    | 37     |
+| Build Time (ms)     | 2,655  |
+| Start Time (ms)     | 237    |
+| Published Size (KB) | 97,961 |
+
+
+| load                |        |
+| ------------------- | ------ |
+| CPU Usage (%)       | 12     |
+| Cores usage (%)     | 49     |
+| Working Set (MB)    | 50     |
+| Private Memory (MB) | 107    |
+| Start Time (ms)     | 97     |
+| First Request (ms)  | 310    |
+| Requests            | 81,222 |
+| Bad responses       | 0      |
+| Mean latency (us)   | 5,908  |
+| Max latency (us)    | 88,363 |
+| Requests/sec        | 1,354  |
+| Requests/sec (max)  | 14,243 |
+
+
+Results saved in '/home/azureuser/traefik-benchmark/traefik_connections-8.json'
+[05:35:18.938] Running session '12c4be0cce1844e4b6e7a23ba51a9862' with description ''
+[05:35:18.992] Starting job 'downstream' ...
+[05:35:18.997] Submitted job: http://10.2.0.4:5010/jobs/16
+[05:35:20.017] 'downstream' has been selected by the server ...
+[05:35:20.019] 'downstream' is now building ... http://10.2.0.4:5010/jobs/16/buildlog
+[05:35:26.029] 'downstream' is running ... http://10.2.0.4:5010/jobs/16/output
+[05:35:26.033] Starting job 'application' ...
+[05:35:26.035] Submitted job: http://10.2.0.5:5010/jobs/16
+[05:35:27.035] 'application' has been selected by the server ...
+[05:35:27.036] 'application' is now building ... http://10.2.0.5:5010/jobs/16/buildlog
+[05:35:33.046] 'application' is running ... http://10.2.0.5:5010/jobs/16/output
+[05:35:33.050] Starting job 'load' ...
+[05:35:33.052] Submitted job: http://10.2.0.6:5010/jobs/16
+[05:35:34.055] 'load' has been selected by the server ...
+[05:35:34.056] 'load' is now building ... http://10.2.0.6:5010/jobs/16/buildlog
+[05:35:35.057] 'load' is running ... http://10.2.0.6:5010/jobs/16/output
+[05:36:51.093] Stopping job 'load' ...
+[05:36:52.107] Deleting job 'load' ...
+[05:36:52.109] Stopping job 'application' ...
+[05:36:53.115] Deleting job 'application' ...
+[05:36:53.116] Stopping job 'downstream' ...
+[05:36:55.124] Deleting job 'downstream' ...
+
+| downstream            |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 84             |
+| Cores usage (%)       | 338            |
+| Working Set (MB)      | 178            |
+| Private Memory (MB)   | 333            |
+| Build Time (ms)       | 3,586          |
+| Start Time (ms)       | 256            |
+| Published Size (KB)   | 95,101         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| application           |                |
+| --------------------- | -------------- |
+| CPU Usage (%)         | 98             |
+| Cores usage (%)       | 393            |
+| Working Set (MB)      | 195            |
+| Private Memory (MB)   | 352            |
+| Build Time (ms)       | 3,529          |
+| Start Time (ms)       | 376            |
+| Published Size (KB)   | 95,410         |
+| .NET Core SDK Version | 3.1.415        |
+| ASP.NET Core Version  | 3.1.21+458d974 |
+| .NET Runtime Version  | 3.1.21+df8abc0 |
+
+
+| load                |         |
+| ------------------- | ------- |
+| CPU Usage (%)       | 21      |
+| Cores usage (%)     | 85      |
+| Working Set (MB)    | 50      |
+| Private Memory (MB) | 107     |
+| Start Time (ms)     | 92      |
+| First Request (ms)  | 477     |
+| Requests            | 706,995 |
+| Bad responses       | 0       |
+| Mean latency (us)   | 677     |
+| Max latency (us)    | 32,055  |
+| Requests/sec        | 11,784  |
+| Requests/sec (max)  | 13,049  |
+
+
+Results saved in '/home/azureuser/traefik-benchmark/yarp_connections-8.json'
