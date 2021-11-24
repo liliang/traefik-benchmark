@@ -104,9 +104,9 @@ jobs:
 
   yarp:
     source:
-      repository: https://github.com/microsoft/reverse-proxy.git
-      branchOrCommit: main
-      project: testassets/BenchmarkApp/BenchmarkApp.csproj
+      repository: https://github.com/liliang/traefik-benchmark.git
+      branchOrCommit: master
+      project: BenchmarkApp/BenchmarkApp.csproj
     readyStateText: Application started.
     arguments: '--urls {{serverScheme}}://*:8080 --clusterUrls {{downstreamScheme}}://{{downstreamAddress}}:{{downstreamPort}}'
 
