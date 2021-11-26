@@ -12,8 +12,8 @@ crank --config ./proxy.benchmarks.yml \
   --load.variables.verb POST \
   --load.variables.bodyFile https://raw.githubusercontent.com/liliang/traefik-benchmark/master/512B.txt \
   --variable path=\/?s=512 \
-  --variable serverScheme=https \
-  --variable downstreamScheme=https \
+  --variable serverScheme=http \
+  --variable downstreamScheme=http \
   --json %s_connections-%d.json
 '''
 
